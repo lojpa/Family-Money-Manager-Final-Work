@@ -1,0 +1,14 @@
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\bin\Debug\netcoreapp2.1\FamilyMoneyManagerApp.deps.json
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\bin\Debug\netcoreapp2.1\FamilyMoneyManagerApp.runtimeconfig.json
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\bin\Debug\netcoreapp2.1\FamilyMoneyManagerApp.runtimeconfig.dev.json
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\bin\Debug\netcoreapp2.1\FamilyMoneyManagerApp.dll
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\bin\Debug\netcoreapp2.1\FamilyMoneyManagerApp.pdb
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.csprojAssemblyReference.cache
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.csproj.CoreCompileInputs.cache
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.RazorAssemblyInfo.cache
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.RazorAssemblyInfo.cs
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.AssemblyInfoInputs.cache
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.AssemblyInfo.cs
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.RazorTargetAssemblyInfo.cache
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.dll
+C:\Users\Dejan\source\repos\FamilyMoneyManagerApp\FamilyMoneyManagerApp\obj\Debug\netcoreapp2.1\FamilyMoneyManagerApp.pdb

@@ -36,6 +36,13 @@ namespace FamilyMoneyManagerApp.Controllers
             return Ok(expenseIncome);
         }
 
+        [HttpGet("amount/{categoryId}")]
+        public ActionResult<double> GetExpenseByCategory(int categoryId)
+         {
+            double totalAmount = _expenseIncomeService.GetExpenseTotalAmountByCategory(categoryId);
+            return Ok(totalAmount);
+        }
+
         [HttpPost]
         public ActionResult<ExpenseIncome> Create(ExpenseIncome expenseIncome)
         {

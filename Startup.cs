@@ -59,6 +59,8 @@ namespace FamilyMoneyManagerApp
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IItemRepository, ItemRepository>();
             services.AddTransient<IItemService, ItemService>();
+            services.AddTransient<IShoppingCartRepository, ShoppingCartRepository>();
+            services.AddTransient<IShoppingCartService, ShoppingCartService>();
 
 
 

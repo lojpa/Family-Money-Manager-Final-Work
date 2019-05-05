@@ -24,7 +24,6 @@ namespace FamilyMoneyManagerApp.Models
 
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<ShoppingCartItems> ShoppingCarts { get; set; }
-
+        public List<ItemCart> ItemCarts { get; set; }
     }
 }

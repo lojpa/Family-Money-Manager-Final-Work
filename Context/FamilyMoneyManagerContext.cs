@@ -19,7 +19,9 @@ namespace FamilyMoneyManagerApp.Context
         public DbSet<ExpenseIncome> ExpenseIncomes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<ItemCart> ItemCarts { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
 
 
 
@@ -37,18 +39,16 @@ namespace FamilyMoneyManagerApp.Context
                .WithMany(c => c.ExpenseIncomes)
                .HasForeignKey(cat => cat.CategoryId);
 
-            modelBuilder.Entity<ShoppingCartItems>()
-        .HasKey(i => new { i.ItemId, i.ShoppingCartId });
 
-            modelBuilder.Entity<ShoppingCartItems>()
-                .HasOne(i => i.Item)
-                .WithMany(sc => sc.ShoppingCarts)
-                .HasForeignKey(i => i.ItemId);
+            modelBuilder.Entity<ItemCart>()
+               .HasOne(ei => ei.ShoppingCart)
+               .WithMany(c => c.Items)
+               .HasForeignKey(cat => cat.ShoppingCartId);
 
-            modelBuilder.Entity<ShoppingCartItems>()
-                .HasOne(sc => sc.ShoppingCart)
-                .WithMany(i => i.Items)
-                .HasForeignKey(sc => sc.ShoppingCartId);
+            modelBuilder.Entity<ItemCart>()
+               .HasOne(ei => ei.Item)
+               .WithMany(c => c.ItemCarts)
+               .HasForeignKey(cat => cat.ItemId);
 
         }
     }

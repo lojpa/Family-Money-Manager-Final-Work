@@ -44,6 +44,18 @@ namespace FamilyMoneyManagerApp.Repositories
             return expenseIncomes;
         }
 
+        public double GetExpenseTotalAmountByCategory(int categoryId)
+        {
+            var expenseIncomes = _context.ExpenseIncomes.Where(x => x.CategoryId == categoryId).ToList();
+            double amount = 0;
+            foreach (var item in expenseIncomes)
+            {
+                amount += (double)item.Amount;
+            }
+
+            return amount;
+        }
+
         public void Remove(int id)
         {
             var expenseIncome = _context.ExpenseIncomes.FirstOrDefault(ei => ei.Id == id);

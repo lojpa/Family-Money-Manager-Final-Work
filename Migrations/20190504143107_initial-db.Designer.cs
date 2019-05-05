@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FamilyMoneyManagerApp.Migrations
 {
     [DbContext(typeof(FamilyMoneyManagerContext))]
-    [Migration("20190429175939_add-items")]
-    partial class additems
+    [Migration("20190504143107_initial-db")]
+    partial class initialdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -96,15 +96,53 @@ namespace FamilyMoneyManagerApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Counter");
+                    b.Property<string>("ImageUrl");
 
                     b.Property<int>("ItemType");
 
                     b.Property<string>("Name");
 
+                    b.Property<decimal>("Price");
+
                     b.HasKey("Id");
 
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ItemCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Counter");
+
+                    b.Property<int>("ItemId");
+
+                    b.Property<int>("ShoppingCartId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.ToTable("ItemCarts");
+                });
+
+            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("TotalNumberOfItems");
+
+                    b.Property<decimal>("TotalPrice");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("FamilyMoneyManagerApp.Models.User", b =>
@@ -143,6 +181,19 @@ namespace FamilyMoneyManagerApp.Migrations
                     b.HasOne("FamilyMoneyManagerApp.Models.Category", "Category")
                         .WithMany("ExpenseIncomes")
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ItemCart", b =>
+                {
+                    b.HasOne("FamilyMoneyManagerApp.Models.Item", "Item")
+                        .WithMany("ItemCarts")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FamilyMoneyManagerApp.Models.ShoppingCart", "ShoppingCart")
+                        .WithMany("Items")
+                        .HasForeignKey("ShoppingCartId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

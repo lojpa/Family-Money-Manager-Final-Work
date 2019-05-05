@@ -36,6 +36,12 @@ namespace FamilyMoneyManagerApp.Services
             return expenseIncomes;
         }
 
+
+        public double GetExpenseTotalAmountByCategory(int categoryId)
+        {
+            return _expenseIncomeRepository.GetExpenseTotalAmountByCategory(categoryId);
+        }
+
         public void Remove(int id)
         {
             _expenseIncomeRepository.Remove(id);

@@ -107,6 +107,27 @@ namespace FamilyMoneyManagerApp.Migrations
                     b.ToTable("Items");
                 });
 
+            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ItemCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Counter");
+
+                    b.Property<int>("ItemId");
+
+                    b.Property<int>("ShoppingCartId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.ToTable("ItemCarts");
+                });
+
             modelBuilder.Entity("FamilyMoneyManagerApp.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
@@ -120,19 +141,6 @@ namespace FamilyMoneyManagerApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ShoppingCarts");
-                });
-
-            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ShoppingCartItems", b =>
-                {
-                    b.Property<int>("ItemId");
-
-                    b.Property<int>("ShoppingCartId");
-
-                    b.HasKey("ItemId", "ShoppingCartId");
-
-                    b.HasIndex("ShoppingCartId");
-
-                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("FamilyMoneyManagerApp.Models.User", b =>
@@ -174,10 +182,10 @@ namespace FamilyMoneyManagerApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ShoppingCartItems", b =>
+            modelBuilder.Entity("FamilyMoneyManagerApp.Models.ItemCart", b =>
                 {
                     b.HasOne("FamilyMoneyManagerApp.Models.Item", "Item")
-                        .WithMany("ShoppingCarts")
+                        .WithMany("ItemCarts")
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade);
 
